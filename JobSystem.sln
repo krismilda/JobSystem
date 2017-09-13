@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobSystem", "JobSystem\JobSystem.csproj", "{82BB7AA8-AD9B-408A-A7D9-FD3DC405BBEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82BB7AA8-AD9B-408A-A7D9-FD3DC405BBEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82BB7AA8-AD9B-408A-A7D9-FD3DC405BBEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82BB7AA8-AD9B-408A-A7D9-FD3DC405BBEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82BB7AA8-AD9B-408A-A7D9-FD3DC405BBEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C0CD560-78A0-4F49-B1A7-F9DB7C3FDEFF}
+	EndGlobalSection
+EndGlobal
