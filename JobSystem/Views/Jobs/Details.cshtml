@@ -1,0 +1,66 @@
+﻿@model JobSystem.Models.Job
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Job</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Darbas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Darbas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sritis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sritis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Darbo_pradzia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Darbo_pradzia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vieta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vieta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Alga)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Alga)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trukme)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trukme)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
