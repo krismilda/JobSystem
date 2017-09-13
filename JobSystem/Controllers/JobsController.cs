@@ -9,11 +9,11 @@ namespace JobSystem.Controllers
 {
     public class JobsController : Controller
     {
-        // GET: Job/Random
+        // GET: Jobs/Random
         public ActionResult Random()
         {
             var job = new Job() { Name = "test" };
-            return View();
+            return View(job);
         }
     }
 }
