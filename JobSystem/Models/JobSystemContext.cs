@@ -15,7 +15,7 @@ namespace JobSystem.Models
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
     
-        public JobSystemContext() : base("name=jobsystem.GeneralDatabase")
+        public JobSystemContext() : base("name=jobsystem.GeneralDatabase.dbo")
         {
         }
 
