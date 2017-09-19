@@ -17,6 +17,7 @@ namespace JobSystem.Models
         [StringLength(50)]
         public string Field { get; set; }
         [DisplayFormat(DataFormatString = "{0:yyyy - MM - d}")]
+        [DateIsGreaterThanToday]
         public DateTime Start { get; set; }
         [Required]
         [StringLength(50)]

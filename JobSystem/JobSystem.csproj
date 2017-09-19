@@ -153,15 +153,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709172044518_InitialCreate.cs" />
-    <Compile Include="Migrations\201709172044518_InitialCreate.Designer.cs">
-      <DependentUpon>201709172044518_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709190847076_addedValidation.cs" />
-    <Compile Include="Migrations\201709190847076_addedValidation.Designer.cs">
-      <DependentUpon>201709190847076_addedValidation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DateIsGreaterThanToday.cs" />
     <Compile Include="Models\Job.cs" />
     <Compile Include="Models\JobSystemContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -227,14 +219,6 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201709172044518_InitialCreate.resx">
-      <DependentUpon>201709172044518_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709190847076_addedValidation.resx">
-      <DependentUpon>201709190847076_addedValidation.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

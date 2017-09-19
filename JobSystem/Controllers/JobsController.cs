@@ -42,19 +42,17 @@ namespace JobSystem.Controllers
         }
 
         // POST: Jobs/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Work,Field,Start,Locality,salary,duration")] Job job)
+        public ActionResult Create(Job job)
         {
             if (ModelState.IsValid)
             {
+                Console.WriteLine("Geras");
                 db.Jobs.Add(job);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            Console.WriteLine("Blogas");
             return View(job);
         }
 
@@ -77,8 +75,7 @@ namespace JobSystem.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Work,Field,Start,Locality,salary,duration")] Job job)
+        public ActionResult Edit(Job job)
         {
             if (ModelState.IsValid)
             {
