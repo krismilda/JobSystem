@@ -85,33 +85,6 @@ namespace JobSystem.Controllers
             }
             return View(job);
         }
-
-        // GET: Jobs/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Job job = db.Jobs.Find(id);
-            if (job == null)
-            {
-                return HttpNotFound();
-            }
-            return View(job);
-        }
-
-        // POST: Jobs/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Job job = db.Jobs.Find(id);
-            db.Jobs.Remove(job);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)
