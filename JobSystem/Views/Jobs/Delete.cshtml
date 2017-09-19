@@ -1,4 +1,5 @@
-﻿@model JobSystem.Models.Job
+﻿
+@model JobSystem.Models.Job
 
 @{
     ViewBag.Title = "Delete";
@@ -44,24 +45,25 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.salary)
+            @Html.DisplayNameFor(model => model.Salary)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.salary)
+            @Html.DisplayFor(model => model.Salary)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.duration)
+            @Html.DisplayNameFor(model => model.Duration)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.duration)
+            @Html.DisplayFor(model => model.Duration)
         </dd>
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">

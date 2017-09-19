@@ -1,5 +1,7 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -8,11 +10,21 @@ namespace JobSystem.Models
     public class Job
     {
         public int Id { get; set; }
+        [Required]
+        [StringLength(250)]
         public string Work { get; set; }
-        public string Field{ get; set; }
+        [Required]
+        [StringLength(50)]
+        public string Field { get; set; }
+        [DisplayFormat(DataFormatString = "{0:yyyy - MM - d}")]
         public DateTime Start { get; set; }
+        [Required]
+        [StringLength(50)]
         public string Locality { get; set; }
-        public float  salary { get; set; }
-        public string duration { get; set; }
+        [Required]
+        [Range(0, 10000)]
+        public float Salary { get; set; }
+        [StringLength(50)]
+        public string Duration { get; set; }
     }
 }
