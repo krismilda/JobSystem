@@ -8,9 +8,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using test1.Models;
+using JobSystem.Models;
 
-namespace test1.Controllers
+namespace JobSystem.Controllers
 {
     [Authorize]
     public class AccountController : Controller
