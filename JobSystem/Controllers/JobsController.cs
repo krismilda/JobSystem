@@ -15,26 +15,11 @@ namespace JobSystem.Controllers
         private JobSystemContext db = new JobSystemContext();
 
         // GET: Jobs
-        public ActionResult Index()
+        public ViewResult Index()
         {
-            return View(db.Jobs.ToList());
+            return View();
         }
-
-        // GET: Jobs/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Job job = db.Jobs.Find(id);
-            if (job == null)
-            {
-                return HttpNotFound();
-            }
-            return View(job);
-        }
-
+       
         // GET: Jobs/Create
         public ActionResult Create()
         {
@@ -47,12 +32,10 @@ namespace JobSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                Console.WriteLine("Geras");
                 db.Jobs.Add(job);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            Console.WriteLine("Blogas");
             return View(job);
         }
 

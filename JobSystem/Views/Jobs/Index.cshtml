@@ -12,71 +12,59 @@
 </p>
 <table class="table" id="jobs">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Work)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Field)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Start)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Locality)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Salary)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Duration)
-            </th>
-            <th>
-                Delete
-            </th>
+            <th>Work</th>
+            <th>Field</th>
+            <th>Start</th>
+            <th>Locality</th>
+            <th>Salary</th>
+            <th>Duration</th>
             <th></th>
-        </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Work)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Field)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Start)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Locality)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Salary)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Duration)
-                </td>
-                <td>
-                    <button data-job-id="@item.Id" class="btn-link js-delete">Delete</button>
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-
-
-                </td>
-            </tr>
-        }
     </tbody>
 </table>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script>
         $(document).ready(function () {
-            $("#jobs").dataTable();
+          var table=$("#jobs").dataTable({
+                ajax: {
+                    url: "/api/jobs",
+                    dataSrc: ""
+                },
+                    columns: [
+                        {
+                            data:"work",
+                           render: function (data, type, job) {
+                                return "<a href='/jobs/edit/" + job.id + "'>" + job.work + "</a>";
+                            }
+                        },
+                    {
+                      data:"field"
+                    },
+                    {
+                        data: "start",
+                        render: function (data) {
+                            return data.substring(0, 10);
+                        }
+                    },
+                    {
+                        data: "locality"
+                    },
+                    {
+                        data: "salary"
+                    },
+                    {
+                        data: "duration"
+                    },
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return "<button class='btn-link js-delete' data-job-id=" + data + ">Delete</button>";
+                        },
+                    }
+                    ]
+            });
             $("#jobs").on("click",".js-delete", function () {
                 var button = $(this);
 
@@ -86,7 +74,7 @@
                             url: "/api/jobs/" + button.attr("data-job-id"),
                             method: "DELETE",
                             success: function () {
-                                button.parents("tr").remove();
+                                table.api().row(button.parents("tr")).remove().draw();
                             }
                         })
                     }
